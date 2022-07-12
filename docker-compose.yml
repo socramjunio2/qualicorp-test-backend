@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+  dev:
+    container_name: nestjs_api_test
+    image: nestjs-api-dev:1.0.0
+    build:
+      context: .
+      target: development
+      dockerfile: ./Docker/nestjs.Dockerfile
+    command: npm run start:dev
+    ports:
+      - 3000:3000
+      - 9229:9229
+    networks:
+      - nesjs-network
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: unless-stopped
+
+volumes:
+  pg-data:
+
+networks:
+  nesjs-network:
