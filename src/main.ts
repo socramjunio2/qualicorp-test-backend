@@ -7,12 +7,15 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Api de teste para contatos')
-    .setDescription('Exemplo de componente em NestJs para contatos.')
+    .setDescription(
+      'Exemplo de componente em NestJs para contatos de clientes.',
+    )
     .setVersion('0.0.1')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  await app.listen(3000);
+  await app.listen(80);
 }
+
 bootstrap();

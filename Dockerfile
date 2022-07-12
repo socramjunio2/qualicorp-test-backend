@@ -1,7 +1,14 @@
-FROM node:12.22-alpine
+FROM node:15.4 as build
 WORKDIR /app
-COPY package.json yarn.lock /app
-RUN yarn install
-COPY . /app
+COPY package*.json .
+RUN npm install
+COPY . .
 EXPOSE 3000
+RUN npm run build
+
+FROM node:15.4
+WORKDIR /app
+COPY package*.json .
+RUN npm install  --only=production
+COPY --from=build /app/dist ./dist
 CMD npm run start:prod
