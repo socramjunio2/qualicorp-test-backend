@@ -1,11 +1,11 @@
 # Api de teste para crud simples de clientes (Contatos)
-Api baseada em Nodejs(Javascript) com framework NestJs
+Api baseada em Nodejs(Javascript) com framework NestJs.
 
-Construi uma base de contatos pra o contexto de Clientes, ou seja,
-cada cliente poderia possuir seus próprios contatos.
+A construção foi em cima de uma base de contatos para o contexto 
+de Clientes, ou seja, cada cliente poderia possuir seus próprios contatos.
 
 ## Arquitetura
-Projeto criado para test da qualicorp
+Projeto criado para test da QualiCorp
 
 ## Para rodar o projeto no ambiente de desenvolvimento
 - npm run start:dev
